@@ -1,18 +1,23 @@
 #!/bin/bash
-read p c
 
+c=$2
 func_tion() {
 
-     for path in "$1"/*; do
-        if [ -d "$path" ]; then
-            func_tion "$path"
+     for pathname in "$1"/*; do
+        if [ -d "$pathname" ]; then
+            func_tion "$pathname"
         else
-            case "$path" in
-                *.$c)
-                    printf '%s\n' "$path"
+            case "$pathname" in
+                *."$c")
+                    printf '%s\n' "$pathname"
             esac
         fi
     done
 }
 
-func_tion "$p"
+func_tion "$@"
+
+
+
+#// Better name for function
+# 
