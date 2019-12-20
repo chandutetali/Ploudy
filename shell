@@ -1,6 +1,0 @@
-#!/bin/bash
-echo  "enter the directive absolute path"
-read p
-echo  "enter the name of extension (eg: txt,exe)"
-read c
-find $p -type f -name "*.$c"

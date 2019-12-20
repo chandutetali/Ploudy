@@ -1,0 +1,23 @@
+#!/bin/bash
+
+c=$2
+func_tion() {
+
+     for pathname in "$1"/*; do
+        if [ -d "$pathname" ]; then
+            func_tion "$pathname"
+        else
+            case "$pathname" in
+                *."$c")
+                    printf '%s\n' "$pathname"
+            esac
+        fi
+    done
+}
+
+func_tion "$@"
+
+
+
+#// Better name for function
+# 
