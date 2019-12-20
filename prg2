@@ -1,0 +1,21 @@
+#!/bin/bash
+a="$1"
+p="$2"
+c="$3"
+func_tion(){
+
+     for pathname in "$1"/*; do
+        if [ -d "$pathname" ]; then
+            func_tion "$pathname"
+        else
+           
+            case "$pathname" in
+                *."$a")
+                 cp -r "$pathname" "$c"
+            esac
+        fi
+    done
+}
+
+func_tion "$p"
+
