@@ -3,13 +3,13 @@ read p c
 
 func_tion() {
 
-     for pathname in "$1"/*; do
-        if [ -d "$pathname" ]; then
-            func_tion "$pathname"
+     for path in "$1"/*; do
+        if [ -d "$path" ]; then
+            func_tion "$path"
         else
-            case "$pathname" in
+            case "$path" in
                 *.$c)
-                    printf '%s\n' "$pathname"
+                    printf '%s\n' "$path"
             esac
         fi
     done
